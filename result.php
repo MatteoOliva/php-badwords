@@ -2,8 +2,12 @@
 $user_paragrafo = $_GET ['paragrafo'];
 $user_paragrafo_len = strlen($user_paragrafo);
 
+
 $user_censura = $_GET ['censura'];
-$user_censure_replace = str_replace('***', $user_censura );
+$user_censura_rep = str_replace( $user_censura, '***', $user_paragrafo );
+$user_censura_rep_len = strlen($user_censura_rep);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +20,10 @@ $user_censure_replace = str_replace('***', $user_censura );
     
     <h1>
         <?= $user_paragrafo . ' e la lunghezza totale della frase è ' . $user_paragrafo_len?>
-        
     </h1>
+    <h2>
+        <?= $user_censura_rep . ' e la lunghezza totale della frase è ' . $user_censura_rep_len?>
+    </h2>
     
 </body>
 </html>
